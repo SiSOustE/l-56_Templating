@@ -15,8 +15,8 @@ const smallCardData = [
   'Small 1',
   'Small 2',
   'Small 3',
-  /*'Small 4',
-  'Small 5',*/
+  'Small 4',
+  'Small 5'
 ]
 const smallCards = smallCardData.map((el) => new Element('div', 'small-card',el).get()
 )
@@ -26,8 +26,7 @@ const leftPanel = new Element('div', 'left-panel', cards).get()
 const rightPanel = new Element('div', 'right-panel', smallCards).get()
 
 // Общий контейнер
-const contentContainer = new Element(
-  'div',
+const contentContainer = new Element('div', 
   'content-container',
   [leftPanel, rightPanel]
 )

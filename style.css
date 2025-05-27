@@ -1,3 +1,17 @@
+:root {
+	/* Цвета */
+	--color-bg-wrapper: grey;
+	--color-bg-panel: white;
+	--color-card-bg: #f9f9f9; /* единый цвет для всех карточек */
+	--color-border: #ddd;
+
+	/*Card */
+	--card-size: 12vw;
+	--card-padding: 1vw;
+
+	--font-size: 1vw;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,18 +24,22 @@
 	width: 100vw;
 	height: 100vh;
 	padding: 10px;
-	background: grey;
+	background: var(--color-bg-wrapper);
 	gap: 10px;
 }
 
 .header,
 .footer {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 80px;
 	margin: 10px 0;
 	padding: 20px;
-	background: white;
+	font-size: calc(var(--font-size) * 2);
+	background: var(--color-bg-panel);
+	border-radius: 8px;
 }
 
 .content {
@@ -31,37 +49,40 @@
 	flex-wrap: wrap;
 }
 
-.card {
+.card,
+.small-card {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	width: 200px;
-	height: 180px;
-	padding: 20px;
-	background: white;
+	justify-content: center;
+	width: calc(var(--card-size));
+	height: calc(var(--card-size) / 1.4);
+	padding: var(--card-padding);
+	align-items: center;
+	background: var(--color-card-bg);
 	border-radius: 8px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border: 1px solid #ddd;
+	color: #333;
+	font-size: calc(var(--font-size) * 1.2);
 }
 
 .small-card {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100px;
-	height: 60px;
-	background: #f9f9f9;
-	border: 1px solid #ddd;
+	width: calc(var(--card-size) / 1.4);
+	height: calc(var(--card-size) / 2);
 	border-radius: 6px;
-	font-size: 14px;
-	color: #333;
+	font-size: calc(var(--font-size));
 }
 
 .sidebar {
+	/* flex-direction: column; */
 	width: 220px;
 	height: 100%;
-	background: #f0f0f0;
+	background: var(--color-card-bg);
 	padding: 20px;
 	border-radius: 8px;
+	font-size: calc(var(--font-size) * 1.4);
+	/* justify-content: center; */
+	/* align-items: center; */
 }
 
 .container {
@@ -71,25 +92,24 @@
 	overflow: hidden;
 }
 
-/*.container > * {
-  min-width: 200px;
-}*/
-
 .content-container {
 	display: flex;
 	gap: 10px;
 	width: 100%;
+	padding: .5vw;
 	overflow: hidden;
+	background: #aaa;
 }
 
 .left-panel,
 .right-panel {
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.5vw;
 	overflow-y: auto;
-	padding: 10px;
-	background: white;
+	padding: 1vw;
+	background: var(--color-bg-panel);
 	border-radius: 8px;
 }
 
