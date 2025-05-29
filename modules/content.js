@@ -1,6 +1,6 @@
 // content.js
 import Element from "../constructor/Element.js";
-import { cardData, smallCardData } from "./data.js";
+import { cardData, smallCardData } from "../data.js";
 
 // Большие карточки
 const cards = cardData.map((el) => new Element("div", "card", el).get());
